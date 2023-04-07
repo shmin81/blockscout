@@ -1,7 +1,7 @@
 #!bin/bash
 
 export DOCKER_VERSION=5.1.2
-export DOCKER_IMAGE=cogod144/blockscout:$DOCKER_VERSION
+export DOCKER_IMAGE=chainz/blockscout:$DOCKER_VERSION
 echo $DOCKER_IMAGE
 
 # FROM에서 사용한 이미지를 최신으로 다시 받고 싶으면 --pull=true 옵션 사용
@@ -47,5 +47,5 @@ docker build -t $DOCKER_IMAGE -f ./docker/Dockerfile_test \
  --build-arg WOBSERVER_ENABLED="false" \
  --build-arg ADMIN_PANEL_ENABLED="" \
  --build-arg RELEASE_VERSION=$DOCKER_VERSION \
- --build-arg BLOCKSCOUT_VERSION=$DOCKER_VERSION-beta \
+ --build-arg BLOCKSCOUT_VERSION=v$DOCKER_VERSION-beta \
  .
